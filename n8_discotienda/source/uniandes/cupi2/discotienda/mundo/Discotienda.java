@@ -18,6 +18,8 @@ import java.io.*;
 import java.text.*;
 import java.util.*;
 
+import javax.swing.JOptionPane;
+
 /**
  * Es la clase que representa la tienda virtual con sus discos. <br>
  * <b>inv: </b> <br>
@@ -526,6 +528,7 @@ public class Discotienda
     	//crear el archivo de tipo file
     	
     	File archivo = new File("./data/discosCostosos.txt.");
+    	String genero = JOptionPane.showInputDialog("Escriba el genero que desea buscar");
     	
     	//crear la pluma para escribir el archivo
     	
@@ -545,7 +548,7 @@ public class Discotienda
     		Disco miDisco=(Disco)discos.get(i);
     		
     		//condicion para tener la informacion de discos pop que valgan mas de 1000 pesos
-    		if (miDisco.darGenero().equals("Pop")&& miDisco.darPrecioDisco()>1000)
+    		if (miDisco.darGenero().equals(genero)&& miDisco.darPrecioDisco()>1000)
     		{
     			//Escribir con la pluma la informacion requerida en el archivo
     			
